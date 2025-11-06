@@ -1,19 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int stepCount = 0;
-
 int fibonacciRecursive(int n) {
-    stepCount++;
-    
-    if (n == 0) {
-        return 0;
-    }
-    
-    if (n == 1) {
-        return 1;
-    }
-    
+    if (n == 0) return 0;
+    if (n == 1) return 1;
     return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 
@@ -22,21 +12,20 @@ int main() {
     
     cout << "Enter n: ";
     cin >> n;
-    
+
     if (n < 0) {
         cout << "Error: Please enter a non-negative number." << endl;
         return 1;
     }
-    
+
     cout << "\nFibonacci Sequence:" << endl;
     for (int i = 0; i <= n; i++) {
-        stepCount = 0;
-        int result = fibonacciRecursive(i);
-        cout << result << endl;
+        cout << fibonacciRecursive(i) << endl;
     }
-    
+
     return 0;
 }
+
 
 
 /*
